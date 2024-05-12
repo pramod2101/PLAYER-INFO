@@ -1,5 +1,3 @@
-// models/player.js
-
 const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
@@ -11,7 +9,14 @@ const Player = sequelize.define('player', {
     primaryKey: true
   },
   name: Sequelize.STRING,
-  dateOfBirth: Sequelize.DATE,
+  dateOfBirth: {
+    type: Sequelize.DATEONLY,
+    allowNull: false,
+    validate: {
+      isDate: true // Validate that it's a valid date
+    }
+  },
+  // dateOfBirth:Sequelize.DATEONLY,
   photoUrl: Sequelize.STRING,
   birthPlace: Sequelize.STRING,
   career: Sequelize.STRING,

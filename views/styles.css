@@ -1,0 +1,88 @@
+/* Medium Form CSS */
+.medium-form {
+  width: 400px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff; /* Light background color */
+}
+
+.medium-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.medium-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.medium-form input[type="text"],
+.medium-form input[type="date"],
+.medium-form input[type="url"],
+.medium-form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.medium-form button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.medium-form button:hover {
+  background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+/* CSS styles for fetched player details */
+#details {
+  list-style-type: none;
+  padding: 0;
+}
+
+#details li {
+  margin-bottom: 10px;
+  background-color: #f0f0f0; /* Light gray background color */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#details li:hover {
+  background-color: #e0e0e0; /* Darker shade on hover */
+}
+
+#details li span {
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+#details .edit-btn {
+  background-color: #007bff; /* Primary color for edit button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#details .edit-btn:hover {
+  background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+/* Styles for Player Image */
+#details img {
+  max-width: 100px; /* Adjust maximum width as needed */
+  max-height: 100px; /* Adjust maximum height as needed */
+  border-radius: 50%; /* Optional: Makes the image round */
+}

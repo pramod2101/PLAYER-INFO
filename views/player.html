@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="form">
+    <form id="form" class="medium-form">
+            <h2>Player information</h2>
             <label for="name">Name:  </label>
             <input type="text" name="name" id="name" >
             <label for="dateOfBirth">Date of Birth:  </label>
@@ -29,14 +30,15 @@
             <input type="number" name="wickets" id="wickets" >
             <label for="average">average:  </label>
             <input type="number" name="average" id="average" >
+             <button id="submit" type="submit">submit</button>
 
-            <button id="submit" type="submit">submit</button>
+             <label for="searchPlayer"> </label>
+             <input type="text" id="searchPlayer"  placeholder="seach player" class="searchPlayer">
+             <button id="searchButton" type="button">search</button>
             <ul id="details"></ul>
-
     </form>
-
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
