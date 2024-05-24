@@ -21,12 +21,6 @@ sequelize
       console.log('Server is running on port 3000');
     });
   })
-  // .then(player => {
-  //   if (!player) {
-  //     return Player.create({ name: 'virat', dateOfBirth: '00-00-0000', photoUrl:'', birthPlace:'', career:'', matches:''});
-  //   }
-  //   return player;
-  // })
   .catch((err) => {
     console.error('Database connection error:', err);
   });

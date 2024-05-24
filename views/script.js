@@ -3,8 +3,24 @@ document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission
   
     const formData = new FormData(this);
+
+    const playerDetails = {
+      name: event.target.name.value,
+      dateOfBirth: event.target.dateOfBirth.value,
+      photoUrl: event.target.photoUrl.value,
+      birthPlace: event.target.birthPlace.value,
+      career: event.target.career.value,
+      matches: event.target.matches.value,
+      score: event.target.score.value,
+      fifties: event.target.fifties.value,
+      centuries: event.target.centuries.value,
+      wickets: event.target.wickets.value,
+      average: event.target.average.value
+  };
+
   
-    axios.post('http://localhost:3000/', Object.fromEntries(formData))
+    // axios.post('http://localhost:3000/', Object.fromEntries(formData))
+    axios.post('http://localhost:3000/',playerDetails)
       .then(response => {
         const player = response.data.player;
         if (!player) {
@@ -46,12 +62,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
           playerImage.alt = player.name; // Optional, set alt text for accessibility
           
           newLi.appendChild(playerImage);
-          // const editBtn = document.createElement('button');
-          // editBtn.setAttribute('class', 'edit-btn');
-          // editBtn.textContent = 'Edit info';
-          // editBtn.setAttribute('data-id', player.id);
-  
-          // newLi.appendChild(editBtn);
+
           detailsList.appendChild(newLi);
         });
       })
@@ -101,16 +112,9 @@ document.getElementById('searchButton').addEventListener('click', function () {
           playerImage.alt = player.name; // Optional, set alt text for accessibility
           
           listItem.appendChild(playerImage);
-    // const editBtn = document.createElement('button');
-    // editBtn.setAttribute('class', 'edit-btn');
-    // editBtn.textContent = 'Edit info';
-    // editBtn.setAttribute('data-id', player.id);
   
-    // listItem.appendChild(editBtn);
     detailsList.appendChild(listItem);
   }
-  
-
 
 // Event listener for page load
 window.addEventListener('load', function () {

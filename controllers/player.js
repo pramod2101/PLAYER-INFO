@@ -4,26 +4,20 @@ const Player = require('../models/player');
 const Sequelize=require('sequelize')
 
 exports.postPlayer = (req, res, next) => {
-  const { name,dateOfBirth, photoUrl, birthPlace, career, matches, score, fifties, centuries, wickets, average } = req.body;
-  console.log(req.body);
-  // Validate dateOfBirth format
-  // const isValidDate = Date.parse(dateOfBirth);
-  // if (isNaN(isValidDate)) {
-  //   return res.status(400).json({ error: 'Invalid date format for dateOfBirth' });
-  // }
-
+  
+  const data=req.body;
   Player.create({
-    name,
-    dateOfBirth,
-    photoUrl,
-    birthPlace,
-    career,
-    matches,
-    score,
-    fifties,
-    centuries,
-    wickets,
-    average
+    name:data.name,
+    dateOfBirth:data.dateOfBirth,
+    photoUrl:data.photoUrl,
+    birthPlace:data.birthPlace,
+    career:data.career,
+    matches:data.matches,
+    score:data.score,
+    fifties:data.fifties,
+    centuries:data.centuries,
+    wickets:data.wickets,
+    average:data.average
   })
     .then((player) => {
       console.log('Player created:', player);
@@ -51,12 +45,7 @@ exports.getPlayer = (req, res, next) => {
   const { name } = req.params; // Assuming the parameter is in the URL
 
   Player.findOne({
-    where: {
-      [Sequelize.Op.or]: [
-        { name: name },
-        { id: name } // Assuming name can also be an ID
-      ]
-    }
+    where:  { name: name }
   })
     .then(player => {
       if (!player) {
